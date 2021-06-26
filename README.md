@@ -1,5 +1,5 @@
 ## Overview
-This repo is a boilerplate for create web application using [ReactJS](https://reactjs.org/).
+This repo is a boilerplate for [Electron](https://www.electronjs.org/) application using [ReactJS](https://reactjs.org/).
 
 ## Features
 - Styling with [EmotionJS](https://emotion.sh/docs/introduction)
