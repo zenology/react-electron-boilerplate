@@ -1,11 +1,30 @@
 const { app, BrowserWindow } = require('electron')
+const {
+  default: installExtension,
+  REDUX_DEVTOOLS,
+  REACT_DEVELOPER_TOOLS
+} = require('electron-devtools-installer')
 const path = require('path')
 const url = require('url')
 
 let mainWindow
 
 const createWindow = () => {
-  mainWindow = new BrowserWindow({ width: 1600, height: 900, show: false })
+  if (!app.isPackaged) {
+    installExtension([REDUX_DEVTOOLS, REACT_DEVELOPER_TOOLS])
+      .then((name) => console.log(`Added Extension:  ${name}`, name))
+      .catch((err) => console.log('An error occurred: ', err))
+  }
+
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false
+    }
+  })
   mainWindow.loadURL(
     !app.isPackaged
       ? process.env.ELECTRON_START_URL
