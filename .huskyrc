@@ -1,0 +1,6 @@
+{
+  "hooks": {
+    "pre-commit": "cross-env FORCE_COLOR=1 lint-staged"
+  }
+}
+

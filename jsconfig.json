@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@core/*": ["core/*"],
+      "@locales/*": ["locales/*"],
+      "@routers/*": ["routers/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

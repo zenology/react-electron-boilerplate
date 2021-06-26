@@ -1,0 +1,2 @@
+react: yarn start-win
+electron: yarn start-electron-win
